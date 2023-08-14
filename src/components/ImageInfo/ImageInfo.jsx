@@ -4,6 +4,7 @@ import ImageGallery from 'components/ImageGallery/ImageGallery';
 import Loader from 'components/Loader/Loader';
 import Button from 'components/Button/Button';
 import { toast } from 'react-toastify';
+import api from 'services/pixabay-api';
 
 export default class ImageInfo extends Component {
   state = {
@@ -20,10 +21,8 @@ export default class ImageInfo extends Component {
     if (prevQuery !== nextQuery) {
       this.setState({ page: 1 });
       this.setState({ status: 'pending' });
-      fetch(
-        `https://pixabay.com/api/?q=${nextQuery}&key=6725923-1edca42cf91687372f6490452&image_type=photo&orientation=horizontal&per_page=12`
-      )
-        .then(res => res.json())
+      api
+        .fetchFirstImages(nextQuery)
         .then(({ hits }) => {
           if (hits.length === 0) {
             throw Error(nextQuery);
