@@ -40,10 +40,8 @@ export default class ImageInfo extends Component {
         page: prevState.page + 1,
       }),
       () => {
-        fetch(
-          `https://pixabay.com/api/?q=${this.props.query}&page=${this.state.page}&key=6725923-1edca42cf91687372f6490452&image_type=photo&orientation=horizontal&per_page=12`
-        )
-          .then(res => res.json())
+        api
+          .fetchLoadMore(this.props.query, this.state.page)
           .then(({ hits }) => {
             if (hits.length < 12) {
               toast('These are all the images by the category.');
