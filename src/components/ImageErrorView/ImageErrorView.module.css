@@ -1,0 +1,11 @@
+.error {
+  background-color: brown;
+  color: white;
+  padding: 15px;
+  border-radius: 3px;
+  margin: auto;
+}
+
+.errorBlock {
+  margin: 15px auto;
+}

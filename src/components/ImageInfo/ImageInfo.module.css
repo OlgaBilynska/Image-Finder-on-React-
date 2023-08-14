@@ -3,3 +3,11 @@
   flex-direction: column;
   gap: 30px;
 }
+
+.choice {
+  margin: 0 auto;
+  background-color: #3f51b5;
+  padding: 15px;
+  border-radius: 3px;
+  color: white;
+}

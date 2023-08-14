@@ -1,7 +1,11 @@
+import css from './ImageErrorView.module.css';
+
 export default function ImageErrorView({ query }) {
   return (
-    <div role="alert">
-      <p>There is no category with this name {query}</p>
+    <div role="alert" className={css.errorBlock}>
+      <span className={css.error}>
+        There is no category with this name: {query}
+      </span>
     </div>
   );
 }

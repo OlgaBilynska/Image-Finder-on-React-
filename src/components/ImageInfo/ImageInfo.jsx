@@ -63,7 +63,7 @@ export default class ImageInfo extends Component {
     const { query } = this.props;
 
     if (status === 'idle') {
-      return <div>Choose an image category here.</div>;
+      return <div className={css.choice}>Choose an image category here</div>;
     }
 
     if (status === 'pending') {
