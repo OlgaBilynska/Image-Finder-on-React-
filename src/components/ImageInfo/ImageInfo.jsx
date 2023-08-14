@@ -5,6 +5,7 @@ import Loader from 'components/Loader/Loader';
 import Button from 'components/Button/Button';
 import { toast } from 'react-toastify';
 import api from 'services/pixabay-api';
+import css from './ImageInfo.module.css';
 
 export default class ImageInfo extends Component {
   state = {
@@ -75,7 +76,7 @@ export default class ImageInfo extends Component {
 
     if (status === 'resolved') {
       return (
-        <div>
+        <div className={css.resultMarkUp}>
           <ImageGallery hits={images} />
           <Button onClick={this.onPageChange} />
         </div>
