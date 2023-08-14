@@ -21,14 +21,13 @@ export default class Searchbar extends Component {
     }
 
     this.props.onSubmit(this.state.query);
-    this.setState({ query: '' });
   };
 
   render() {
     return (
       <header className={css.searchbar}>
         <SearchForm
-          onNameChange={this.handleNameChange}
+          onChange={this.handleNameChange}
           onFormSubmit={this.handleSubmit}
           value={this.state.query}
         />

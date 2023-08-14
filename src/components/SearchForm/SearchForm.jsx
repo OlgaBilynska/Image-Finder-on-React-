@@ -1,7 +1,7 @@
 import css from './SearchForm.module.css';
 import { ImSearch } from 'react-icons/im';
 
-export default function SearchForm({ onNameChange, onFormSubmit, value }) {
+export default function SearchForm({ onChange, onFormSubmit, value }) {
   return (
     <form className={css.searchForm} onSubmit={onFormSubmit}>
       <button type="submit" className={css.searchFormButton}>
@@ -16,7 +16,7 @@ export default function SearchForm({ onNameChange, onFormSubmit, value }) {
         placeholder="Search images and photos"
         name="query"
         value={value}
-        onChange={onNameChange}
+        onChange={onChange}
       />
     </form>
   );
